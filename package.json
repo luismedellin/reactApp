@@ -2,7 +2,7 @@
   "name": "my-app",
   "version": "1.0.0",
   "description": "Ejemplo de aplicación del curso de React.js",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -11,6 +11,7 @@
   "dependencies": {
     "bootstrap": "^3.3.5",
     "browserify": "^11.0.1",
+    "express": "^4.13.4",
     "flux": "^2.0.3",
     "gulp": "^3.9.0",
     "gulp-concat": "^2.6.0",

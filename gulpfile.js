@@ -15,13 +15,15 @@ var config = {
 	devBaseUrl: 'http://localhost',
 	paths: {
 		html: './src/*.html',//los archivos de origen en el directorio
-		js: './scr/**/.js',
+		//js: './scr/*.js',
+		js: 'src/*.js',
 		css: [
 			'node_modules/bootstrap/dist/css/bootstrap.min.css',
 			'node_modules/bootstrap/dist/css/bootstrap-theme.min.css'
 		],
 		dist: './dist',
-		mainJs: './src/main.js'
+		//mainJs: './src/main.js'
+		mainJs: 'src/main.js'
 	}
 };
 
@@ -69,11 +71,30 @@ gulp.task('css', function() {
 		.pipe(gulp.dest(config.paths.dist+'/css'));
 });
 
+//Valida el código JS
 gulp.task('lint', function() {
 	return gulp.src(config.paths.js)
 		.pipe(lint({config: 'eslint.config.json'}))
 		.pipe(lint.format());
 });
+
+/*
+gulp.task('lint', function () {
+    // ESLint ignores files with "node_modules" paths.
+    // So, it's best to have gulp ignore the directory as well.
+    // Also, Be sure to return the stream from the task;
+    // Otherwise, the task may end before the stream has finished.
+    return gulp.src([config.paths.js])
+        // eslint() attaches the lint output to the "eslint" property
+        // of the file object so it can be used by other modules.
+        .pipe(lint())
+        // eslint.format() outputs the lint results to the console.
+        // Alternatively use eslint.formatEach() (see Docs).
+        .pipe(lint.format())
+        // To have the process exit with an error code (1) on
+        // lint error, return the stream and pipe to failAfterError last.
+        .pipe(lint.failAfterError());
+});*/
 
 //es un observador que observa los cambios y los refleja 
 //directamente en el navegador.
