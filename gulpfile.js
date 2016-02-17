@@ -15,6 +15,7 @@ var config = {
 	paths: {
 		html: './src/*.html',
 		js: './src/**/*.js',
+		images: './src/img/*',
 		css: [
       		'node_modules/bootstrap/dist/css/bootstrap.min.css',
       		'node_modules/bootstrap/dist/css/bootstrap-theme.min.css'
@@ -31,6 +32,7 @@ var config = {
 		html: './src/*.html',//los archivos de origen en el directorio
 		js: './scr/*.js',
 		//js: 'src/*.js',
+		images: './src/img/*',
 		css: [
 			'node_modules/bootstrap/dist/css/bootstrap.min.css',
 			'node_modules/bootstrap/dist/css/bootstrap-theme.min.css'
@@ -84,6 +86,15 @@ gulp.task('css', function() {
 		.pipe(gulp.dest(config.paths.dist + '/css'));
 });
 
+gulp.task('images', function() {
+	gulp.src(config.paths.images)
+		.pipe(gulp.dest(config.paths.dist + '/img'))
+		.pipe(connect.reload());
+
+	gulp.src('./src/favicon.ico')
+		.pipe(gulp.dest(config.paths.dist));
+});
+
 //Valida el código JS
 gulp.task('lint', function() {
 	return gulp.src(config.paths.js)
@@ -99,4 +110,4 @@ gulp.task('watch', function() {
 });
 
 //pongo en el array las tareas creadas
-gulp.task('default', ['html', 'js', 'css', 'lint', 'open', 'watch']);
+gulp.task('default', ['html', 'js', 'css', 'images', 'lint', 'open', 'watch']);
