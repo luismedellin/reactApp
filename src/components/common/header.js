@@ -8,10 +8,11 @@ var Header = React.createClass({
 			<nav className='navbar navbar-default'>
 				<div className='container-fluid'>
 					<a href="/" className="navbar-brand">
-						<img src="img/pluralsight-logo.jpg" width="256px" height="40px"/>
+						<img src="img/pluralsight-logo.jpg" height="30px"/>
 					</a>
 					<ul className='nav navbar-nav'>
 						<li><a href='/'>Home</a></li>
+						<li><a href='/#author'>Author</a></li>
 						<li><a href='/#about'>About</a></li>
 					</ul>
 				</div>
