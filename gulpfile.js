@@ -30,7 +30,7 @@ var config = {
 	devBaseUrl: 'http://localhost',
 	paths: {
 		html: './src/*.html',//los archivos de origen en el directorio
-		js: './scr/*.js',
+		js: './src/**/*.js',
 		//js: 'src/*.js',
 		images: './src/img/*',
 		css: [
