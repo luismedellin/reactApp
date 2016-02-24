@@ -18,30 +18,13 @@ var config = {
 		images: './src/img/*',
 		css: [
       		'node_modules/bootstrap/dist/css/bootstrap.min.css',
-      		'node_modules/bootstrap/dist/css/bootstrap-theme.min.css'
+      		'node_modules/bootstrap/dist/css/bootstrap-theme.min.css',
+      		'node_modules/toastr/build/toastr.css'
     	],
 		dist: './dist',
 		mainJs: './src/main.js'
 	}
 }
-
-var config = {
-	port: 9005,
-	devBaseUrl: 'http://localhost',
-	paths: {
-		html: './src/*.html',//los archivos de origen en el directorio
-		js: './src/**/*.js',
-		//js: 'src/*.js',
-		images: './src/img/*',
-		css: [
-			'node_modules/bootstrap/dist/css/bootstrap.min.css',
-			'node_modules/bootstrap/dist/css/bootstrap-theme.min.css'
-		],
-		dist: './dist',
-		mainJs: './src/main.js'
-		//mainJs: 'src/main.js'
-	}
-};
 
 //Start a local development server
 //Arranca un servidor de desarrollo
